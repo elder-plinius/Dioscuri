@@ -8,3 +8,5 @@ python-dotenv
 
 # Google API client library for accessing various Google APIs
 google-api-python-client
+
+google-generativeai
