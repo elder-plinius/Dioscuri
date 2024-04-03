@@ -1,0 +1,10 @@
+# requirements.txt
+
+# Streamlit for web applications
+streamlit
+
+# Dotenv for environment variable management
+python-dotenv
+
+# Google API client library for accessing various Google APIs
+google-api-python-client
