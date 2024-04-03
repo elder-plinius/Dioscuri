@@ -3,7 +3,7 @@ from gemini_chat import GeminiChat
 from appendages import get_appended_prompt
 
 def main():
-    st.title("Chat Interface")
+    st.title("Dioscuri")
 
     # Initialize GeminiChat
     gemini_chat = GeminiChat()
@@ -32,10 +32,10 @@ def main():
     user_input = st.text_input("Enter your message:", key="user_input", value=user_input_state)
 
     # Temperature slider
-    temperature = st.slider("Temperature", 0.0, 1.0, 0.5, 0.01)
+    temperature = st.slider("Temperature", 0.0, 1.0, 0.9, 0.01)
 
     # Toggle for appending encoded string (jailbreak)
-    append_encoded_string = st.checkbox("Toggle Jailbreak", value=False)
+    append_encoded_string = st.checkbox("Enable Jailbreak", value=True)
 
     if user_input:
         prompt = user_input
