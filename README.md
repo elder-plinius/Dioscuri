@@ -1,1 +1,3 @@
-Template for AI Projects
+Dioscuri
+
+LATENT SPACE LIBERATED
