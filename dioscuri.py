@@ -34,15 +34,12 @@ def main():
     # Temperature slider
     temperature = st.slider("Temperature", 0.0, 1.0, 0.5, 0.01)
 
-    # Model dropdown
-    model_options = ["gemini-pro"]
-    selected_model = st.selectbox("Select Model", model_options, index=3)  # Default to "gemini"
-
     # Toggle for appending encoded string (jailbreak)
     append_encoded_string = st.checkbox("Toggle Jailbreak", value=False)
 
     if user_input:
         prompt = user_input
+
         if append_encoded_string:
             # Append encoded string to the user input
             prompt = user_input + " " + get_appended_prompt()
@@ -53,10 +50,7 @@ def main():
 
         while retry_count < max_retries:
             # Send the prompt to GeminiChat
-            if selected_model == "gemini-pro":
-                response = gemini_chat.send_message(prompt, temperature=temperature)
-            else:
-                response = gemini_chat.send_message(prompt, temperature=temperature, model=selected_model)
+            response = gemini_chat.send_message(prompt, temperature=temperature)
 
             if response is not None:
                 break
